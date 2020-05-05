@@ -9,7 +9,7 @@ since a lot of emotional nuances, like irony or negation are lost.
 - [Ressources](#ressources)
 - [Technologies](#technologies)
 - [Setup](#setup)
-- [Sample Plots / Documentation](#sample-plots-/-documentation)
+- [Sample Plots / Documentation](#plots-and-documentation)
 - [Conclusion](#conclusion)
 
 ## General information
@@ -48,7 +48,7 @@ The dataset is from [Adrien Barbaresi](https://adrien.barbaresi.eu/corpora/speec
 Plot of number of speeches per year:
 ![number of speeches per year](sentiments_in_political_speeches/plotting/plots_big/quantities/per_year.png "number of speeches per year")
 
-## Sample plots / Documentation
+## Plots and Documentation
 All plots were made using the functions in `sentiments_in_political_speeches/plotting/emotions_plotter.py`.
 
 ### `plot_average_score()`
@@ -64,10 +64,12 @@ plots a line plot for all emotions in the dataset and puts all emotions onto one
 ### `plot_mean_per_year()`
 plots a line plot for one emotion in the dataset. The data before 2000 varys a lot, which could be due to the smaller datasize.
 
-Example 1: Liebe / Love:
+Example 1: Liebe / Love
+
 ![line plot](sentiments_in_political_speeches/plotting/plots_big/emotions/means/liebe_line.png)
 
-Example 2: Ekel / Disgust:
+Example 2: Ekel / Disgust
+
 ![line plot](sentiments_in_political_speeches/plotting/plots_big/emotions/means/ekel_line.png)
 
 Plots for all emotions can be found [here](https://github.com/Jana-Z/sentiments_in_german_political_speeches/tree/master/sentiments_in_political_speeches/plotting/plots_big/emotions/means)
@@ -81,9 +83,11 @@ plots a scatter plot for all emotions in the dataset and puts all emotions onto 
 plots a scatter plot for one emotion in the dataset.
 
 Example 1: Verachtung / Contempt
+
 ![scatter plot](sentiments_in_political_speeches/plotting/plots_big/emotions/total/verachtung_scatter.png)
 
 Example 2: Trauer / Grief
+
 ![scatter plot](sentiments_in_political_speeches/plotting/plots_big/emotions/total/trauer_scatter.png)
 
 Plots for all emotions can be found [here](https://github.com/Jana-Z/sentiments_in_german_political_speeches/tree/master/sentiments_in_political_speeches/plotting/plots_big/emotions/total)
