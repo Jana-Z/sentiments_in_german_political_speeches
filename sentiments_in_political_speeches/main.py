@@ -22,30 +22,31 @@ DST_DIR = './plotting/plots_big/'
 def main():
     emotion_list = data.emotions_loader.get_emotion_list()
     df = pd.read_csv('speeches.csv')
-    quantities.plot_per_year(df)
-    emotions_plotter.plot_average_score(df,
-        emotion_list=emotion_list,
-        dst=os.path.join(DST_DIR, 'emotions/')
-    )
-    emotions_plotter.plot_per_year_all_emotions(
-        df=df,
-        emotion_list=emotion_list
-        dst=os.path.join(DST_DIR, 'emotions/total')
-    )
-    emotions_plotter.plot_mean_per_year_all_emotions(
-        df=df,
-        emotion_list=emotion_list, 
-        dst=os.path.join(DST_DIR, 'emotions/mean'))
-    for emotion in emotion_list:
-        emotions_plotter.plot_mean_per_year(
-            emotion=emotion,
-            df=df,
-            dst=os.path.join(DST_DIR, 'emotions/means')
-        )
-        emotions_plotter.plot_per_year(df=df,
-            emotion=emotion,
-            dst=os.path.join(DST_DIR, 'emotions/total')
-        )
+    # quantities.plot_per_year(df)
+    # emotions_plotter.plot_average_score(df,
+    #     emotion_list=emotion_list,
+    #     dst=os.path.join(DST_DIR, 'emotions/')
+    # )
+    # emotions_plotter.plot_per_year_all_emotions(
+    #     df=df,
+    #     emotion_list=emotion_list
+    #     dst=os.path.join(DST_DIR, 'emotions/total')
+    # )
+    # emotions_plotter.plot_mean_per_year_all_emotions(
+    #     df=df,
+    #     emotion_list=emotion_list, 
+    #     dst=os.path.join(DST_DIR, 'emotions/mean'))
+    # for emotion in emotion_list:
+    #     emotions_plotter.plot_mean_per_year(
+    #         emotion=emotion,
+    #         df=df,
+    #         dst=os.path.join(DST_DIR, 'emotions/means')
+    #     )
+    #     emotions_plotter.plot_per_year(df=df,
+    #         emotion=emotion,
+    #         dst=os.path.join(DST_DIR, 'emotions/total')
+    #     )
+    emotions_plotter.plot_pie_per_politicians(df=df, emotion_list=emotion_list, politician=None)
 
 def get_emotions_and_store(dst_filepath='./speeches.csv'):
     df = speeches.load()

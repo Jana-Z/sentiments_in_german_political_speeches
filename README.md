@@ -15,9 +15,9 @@ Python: 3.7
 ## To do
 - [ ] Make test cases
 - [ ] plot emotions (per speaker)
-- [ ] get emotions per sentence
+- [ ] get emotions per sentence / per speech
 - [ ] visualize all of that (in JS)
 - [ ] build webserver and deploy
-- [ ] Make Readme better
+- [ ] Make Readme better (how to set up)
 - [ ] use pandas with emotions
 - [ ] add requirements to GitHub

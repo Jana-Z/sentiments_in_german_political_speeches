@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import os
+import pandas as pd
 
 import speeches
 import emotions
@@ -109,18 +110,16 @@ def plot_mean_per_year_all_emotions(df, emotion_list, dst=None):
         plt.savefig(filepath)
     else:
         plt.show()
-    plt.clf() 
+    plt.clf()
 
-# TODO: Move to place where this function belongs
-    # def check_dicts
-def calculate_emotions():
-    df = speeches.load()
-    df = speeches.clean(df)
-    df['emotions'] = df.apply(lambda row:
-                            calculator.get_emotions(row['speech']), axis = 1)
-    df['total words'] = df.apply(lambda row:
-                        calculator.count_words(row['speech']), axis = 1)
-    for emotion in EMOTION_LIST:
-        df[emotion] = df.apply(lambda row:
-                row['emotions'][emotion] / row['total words'], axis = 1)
-    return df
+def plot_pie_per_politicians(df, emotion_list, politician, dst=None, n=6):
+    # only plot n most occuring politicians in data set
+    politicians = df['speaker'].value_counts()[:n].index.tolist()
+    politician_df = pd.DataFrame({})
+    for emotion in emotion_list:
+        for politician in politicians:
+            politician_df.at[emotion, politician] = (df.loc[df['speaker'] == politician][emotion]).mean()
+    politician_df *= 1000   # scale for pie plot
+    print(politician_df)
+    politician_df.plot.pie(subplots=True, figsize=(3,3), layout=(2, 3), legend=False)
+    plt.show()
